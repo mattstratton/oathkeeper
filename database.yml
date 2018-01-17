@@ -1,0 +1,11 @@
+development:
+  dialect: "sqlite3"
+  database: /Users/mstratton/go/src/github.com/mattstratton/oathkeeper_development.sqlite
+
+test:
+  dialect: "sqlite3"
+  database: /Users/mstratton/go/src/github.com/mattstratton/oathkeeper_test.sqlite
+
+production:
+  dialect: "sqlite3"
+  database: /Users/mstratton/go/src/github.com/mattstratton/oathkeeper_production.sqlite
