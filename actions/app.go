@@ -11,6 +11,8 @@ import (
 	"github.com/gobuffalo/buffalo/middleware/i18n"
 	"github.com/gobuffalo/packr"
 	"github.com/mattstratton/oathkeeper/models"
+
+	"github.com/markbates/goth/gothic"
 )
 
 // ENV is used to help switch settings based on where the
@@ -57,6 +59,15 @@ func App() *buffalo.App {
 		app.GET("/", HomeHandler)
 
 		app.ServeFiles("/assets", assetsBox)
+		app.Use(SetCurrentUser)
+		app.Use(Authorize)
+		app.Middleware.Skip(Authorize, HomeHandler)
+		auth := app.Group("/auth")
+		bah := buffalo.WrapHandlerFunc(gothic.BeginAuthHandler)
+		auth.GET("/{provider}", bah)
+		auth.GET("/{provider}/callback", AuthCallback)
+		auth.DELETE("", AuthDestroy)
+		auth.Middleware.Skip(Authorize, bah, AuthCallback)
 	}
 
 	return app
