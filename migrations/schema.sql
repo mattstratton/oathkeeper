@@ -11,3 +11,11 @@ CREATE TABLE IF NOT EXISTS "users" (
 "created_at" DATETIME NOT NULL,
 "updated_at" DATETIME NOT NULL
 );
+CREATE TABLE IF NOT EXISTS "talks" (
+"id" TEXT PRIMARY KEY,
+"user_id" char(36) NOT NULL,
+"title" TEXT NOT NULL,
+"abstract" TEXT NOT NULL,
+"created_at" DATETIME NOT NULL,
+"updated_at" DATETIME NOT NULL
+);

@@ -68,6 +68,7 @@ func App() *buffalo.App {
 		auth.GET("/{provider}/callback", AuthCallback)
 		auth.DELETE("", AuthDestroy)
 		auth.Middleware.Skip(Authorize, bah, AuthCallback)
+		app.Resource("/talks", TalksResource{})
 	}
 
 	return app
