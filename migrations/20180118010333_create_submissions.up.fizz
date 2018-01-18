@@ -1,0 +1,7 @@
+create_table("submissions", func(t) {
+	t.Column("id", "uuid", {"primary": true})
+	t.Column("status", "string", {})
+	t.Column("event_id", "uuid", {})
+	t.Column("speaker_id", "uuid", {})
+	t.Column("talk_id", "uuid", {})
+})

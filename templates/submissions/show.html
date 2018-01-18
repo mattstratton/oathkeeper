@@ -1,0 +1,22 @@
+<div class="page-header">
+  <h1>Submission#Show</h1>
+</div>
+
+<ul class="list-unstyled list-inline">
+  <li><a href="<%= submissionsPath() %>" class="btn btn-info">Back to all Submissions</a></li>
+  <li><a href="<%= editSubmissionPath({ submission_id: submission.ID })%>" class="btn btn-warning">Edit</a></li>
+  <li><a href="<%= submissionPath({ submission_id: submission.ID })%>" data-method="DELETE" data-confirm="Are you sure?" class="btn btn-danger">Destroy</a>
+</ul>
+
+<p>
+  <strong>Status</strong>: <%= submission.Status %>
+</p>
+<p>
+  <strong>EventID</strong>: <%= submission.EventID %>
+</p>
+<p>
+  <strong>SpeakerID</strong>: <%= submission.SpeakerID %>
+</p>
+<p>
+  <strong>TalkID</strong>: <%= submission.TalkID %>
+</p>

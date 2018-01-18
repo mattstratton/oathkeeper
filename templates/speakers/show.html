@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h1>Speaker#Show</h1>
+</div>
+
+<ul class="list-unstyled list-inline">
+  <li><a href="<%= speakersPath() %>" class="btn btn-info">Back to all Speakers</a></li>
+  <li><a href="<%= editSpeakerPath({ speaker_id: speaker.ID })%>" class="btn btn-warning">Edit</a></li>
+  <li><a href="<%= speakerPath({ speaker_id: speaker.ID })%>" data-method="DELETE" data-confirm="Are you sure?" class="btn btn-danger">Destroy</a>
+</ul>
+
+<p>
+  <strong>Name</strong>: <%= speaker.Name %>
+</p>
+<p>
+  <strong>Bio</strong>: <%= speaker.Bio %>
+</p>
+<p>
+  <strong>Twitter</strong>: <%= speaker.Twitter %>
+</p>
+<p>
+  <strong>Github</strong>: <%= speaker.Github %>
+</p>
+<p>
+  <strong>Homepage</strong>: <%= speaker.Homepage %>
+</p>

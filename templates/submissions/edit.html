@@ -1,0 +1,8 @@
+<div class="page-header">
+  <h1>Edit Submission</h1>
+</div>
+
+<%= form_for(submission, {action: submissionPath({ submission_id: submission.ID }), method: "PUT"}) { %>
+  <%= partial("submissions/form.html") %>
+  <a href="<%= submissionPath({ submission_id: submission.ID }) %>" class="btn btn-warning" data-confirm="Are you sure?">Cancel</a>
+<% } %>

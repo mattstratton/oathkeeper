@@ -69,6 +69,9 @@ func App() *buffalo.App {
 		auth.DELETE("", AuthDestroy)
 		auth.Middleware.Skip(Authorize, bah, AuthCallback)
 		app.Resource("/talks", TalksResource{})
+		app.Resource("/submissions", SubmissionsResource{})
+		app.Resource("/events", EventsResource{})
+		app.Resource("/speakers", SpeakersResource{})
 	}
 
 	return app

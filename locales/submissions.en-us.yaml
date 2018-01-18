@@ -1,0 +1,6 @@
+- id: "submission.created.success"
+  translation: "Submission was successfully created."
+- id: "submission.updated.success"
+  translation: "Submission was successfully updated."
+- id: "submission.destroyed.success"
+  translation: "Submission was successfully destroyed."

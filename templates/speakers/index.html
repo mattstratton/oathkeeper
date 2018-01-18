@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h1>Speakers</h1>
+</div>
+<ul class="list-unstyled list-inline">
+  <li><a href="<%= newSpeakersPath() %>" class="btn btn-primary">Create New Speaker</a></li>
+</ul>
+
+<table class="table table-striped">
+  <thead>
+  <th>Name</th>
+    <th>Bio</th>
+    <th>&nbsp;</th>
+  </thead>
+  <tbody>
+    <%= for (speaker) in speakers { %>
+      <tr>
+      <td><%= speaker.Name %></td>
+        <td><%= speaker.Bio %></td>
+        <td>
+          <div class="pull-right">
+            <a href="<%= speakerPath({ speaker_id: speaker.ID }) %>" class="btn btn-info">View</a>
+            <a href="<%= editSpeakerPath({ speaker_id: speaker.ID }) %>" class="btn btn-warning">Edit</a>
+            <a href="<%= speakerPath({ speaker_id: speaker.ID }) %>" data-method="DELETE" data-confirm="Are you sure?" class="btn btn-danger">Destroy</a>
+          </div>
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%= paginator(pagination) %>
+</div>

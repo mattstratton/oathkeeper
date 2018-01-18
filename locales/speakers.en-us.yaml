@@ -1,0 +1,6 @@
+- id: "speaker.created.success"
+  translation: "Speaker was successfully created."
+- id: "speaker.updated.success"
+  translation: "Speaker was successfully updated."
+- id: "speaker.destroyed.success"
+  translation: "Speaker was successfully destroyed."
